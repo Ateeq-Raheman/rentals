@@ -1,0 +1,30 @@
+{
+ "attach_print": 0,
+ "channel": "Email",
+ "condition": "",
+ "creation": "2024-10-14 18:51:22.595275",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Ride Boking",
+ "enabled": 1,
+ "event": "New",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "Hey New Booking has Arrived\n<a href=\"https//ateeq.cab:8001/app\">Click Here to View</a>",
+ "message_type": "HTML",
+ "modified": "2024-10-14 18:51:22.595275",
+ "modified_by": "Administrator",
+ "module": "Rent a Car",
+ "name": "New Booking ARRIVED",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_document_field": "",
+   "receiver_by_role": "System Manager"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "subject": "{{ doc.customer_name }} booked a vehicle!"
+}

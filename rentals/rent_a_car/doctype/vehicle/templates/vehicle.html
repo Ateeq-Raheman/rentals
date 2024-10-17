@@ -1,0 +1,14 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+    <h1>{{ title }}</h1>
+    <h2>color : {{ doc.color }}</h2>
+
+    {% if doc.image %}
+    <img src="{{ doc.image }}" alt="">
+    {% else %}
+    <span>No Image Available For This Car</span>
+    {% endif %}
+
+    <a class="btn btn-info" href="/order-a-ride/new?vehicle={{ doc.name }}">Book A Ride</a>
+{% endblock %}

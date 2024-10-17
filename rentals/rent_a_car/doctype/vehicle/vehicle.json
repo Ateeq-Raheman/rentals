@@ -1,17 +1,28 @@
 {
  "actions": [],
+ "allow_guest_to_view": 1,
  "allow_import": 1,
- "allow_rename": 1,
+ "autoname": "autoincrement",
  "creation": "2024-10-08 13:04:34.563394",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "title",
   "make",
   "year",
   "color",
+  "insurance_expiry_date",
+  "get_summary",
+  "summary",
   "column_break_nqcs",
   "model",
-  "licence_plate"
+  "licence_plate",
+  "publish",
+  "route",
+  "status",
+  "image",
+  "condition",
+  "my_python_code"
  ],
  "fields": [
   {
@@ -50,14 +61,75 @@
   {
    "fieldname": "column_break_nqcs",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "permlevel": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "default": "0",
+   "fieldname": "publish",
+   "fieldtype": "Check",
+   "label": "Publish ?",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  },
+  {
+   "fieldname": "insurance_expiry_date",
+   "fieldtype": "Date",
+   "label": "Insurance Expiry Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nOut Of Service\nSold\ncrushe"
+  },
+  {
+   "fieldname": "condition",
+   "fieldtype": "Rating",
+   "label": "Condition"
+  },
+  {
+   "fieldname": "get_summary",
+   "fieldtype": "Button",
+   "label": "Get Summary"
+  },
+  {
+   "fieldname": "summary",
+   "fieldtype": "HTML",
+   "label": "Summary"
+  },
+  {
+   "fieldname": "my_python_code",
+   "fieldtype": "Code",
+   "label": "My Python Code",
+   "options": "Python"
   }
  ],
+ "has_web_view": 1,
  "index_web_pages_for_search": 1,
+ "is_published_field": "publish",
  "links": [],
- "modified": "2024-10-08 13:12:39.442103",
+ "modified": "2024-10-17 16:57:37.184194",
  "modified_by": "Administrator",
  "module": "Rent a Car",
  "name": "Vehicle",
+ "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [
   {
@@ -71,9 +143,49 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "export": 1,
+   "read": 1,
+   "report": 1,
+   "role": "vehicle manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "export": 1,
+   "read": 1,
+   "report": 1,
+   "role": "vehicle supervisor",
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "vehicle Auditor",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "vehicle Auditor",
+   "share": 1,
+   "write": 1
   }
  ],
+ "route": "cars",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "title"
 }

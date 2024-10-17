@@ -9,8 +9,9 @@
   "customer_name",
   "contact_no",
   "pickup_time",
+  "vehicle",
   "column_break_gpfp",
-  "select_sjam",
+  "status",
   "pickup_address"
  ],
  "fields": [
@@ -46,8 +47,14 @@
    "fieldtype": "Column Break"
   },
   {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "label": "Vehicle",
+   "options": "Vehicle"
+  },
+  {
    "default": "New",
-   "fieldname": "select_sjam",
+   "fieldname": "status",
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Status",
@@ -56,7 +63,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-11 10:51:26.091242",
+ "modified": "2024-10-12 13:02:42.248318",
  "modified_by": "Administrator",
  "module": "Rent a Car",
  "name": "Ride Order",
