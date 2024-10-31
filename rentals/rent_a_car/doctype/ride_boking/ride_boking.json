@@ -1,45 +1,40 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{DD}-{order}",
  "creation": "2024-10-11 12:24:45.033846",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_0zmd",
   "order",
-  "vehicle",
-  "amended_from",
-  "column_break_eeeu",
   "driver",
+  "customer_name",
+  "vehicle",
   "section_break_xtgz",
   "column_break_fxfb",
+  "booking_time",
+  "pickup_time",
+  "pickup_location",
   "items",
+  "total_distance",
   "section_break_gwzi",
-  "column_break_nhuk",
   "rate",
-  "column_break_scgh",
-  "total_amount"
+  "total_amount",
+  "amended_from"
  ],
  "fields": [
   {
    "fieldname": "section_break_0zmd",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Ride Boking",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
+   "fieldtype": "Section Break",
+   "label": "Order Details"
   },
   {
    "fieldname": "order",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Order",
+   "link_filters": "[[\"Ride Order\",\"status\",\"in\",[\"Accepted\",null]]]",
    "options": "Ride Order",
    "reqd": 1
   },
@@ -48,16 +43,14 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Driver",
+   "link_filters": "[[\"Driver\",\"status\",\"=\",\"Vaccant\"]]",
    "options": "Driver",
    "reqd": 1
   },
   {
-   "fieldname": "column_break_eeeu",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "section_break_xtgz",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Location Details "
   },
   {
    "fieldname": "column_break_fxfb",
@@ -68,16 +61,13 @@
    "fieldname": "items",
    "fieldtype": "Table",
    "label": "Items",
-   "options": "Ride Booking Item"
+   "options": "Ride Booking Item",
+   "read_only": 1
   },
   {
    "fieldname": "rate",
    "fieldtype": "Currency",
    "label": "Rate/km"
-  },
-  {
-   "fieldname": "column_break_nhuk",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "total_amount",
@@ -87,27 +77,70 @@
   },
   {
    "fieldname": "section_break_gwzi",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_scgh",
-   "fieldtype": "Column Break"
+   "fieldtype": "Section Break",
+   "label": "Amount"
   },
   {
    "fetch_from": "order.vehicle",
    "fieldname": "vehicle",
    "fieldtype": "Link",
    "label": "Vehicle",
+   "link_filters": "[[\"Vehicle\",\"status\",\"=\",\"vaccant\"]]",
    "options": "Vehicle"
+  },
+  {
+   "fieldname": "total_distance",
+   "fieldtype": "Int",
+   "label": "Total Distance",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "order.pickup_time",
+   "fieldname": "pickup_time",
+   "fieldtype": "Datetime",
+   "label": "Pickup Time",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "order.pickup_address",
+   "fieldname": "pickup_location",
+   "fieldtype": "Small Text",
+   "hidden": 1,
+   "label": "Pickup location"
+  },
+  {
+   "fetch_from": "order.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name "
+  },
+  {
+   "depends_on": "eval:doc.name\n",
+   "fetch_from": "order.booking_time",
+   "fieldname": "booking_time",
+   "fieldtype": "Datetime",
+   "label": "Booking Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Ride Boking",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-10-12 12:43:04.259009",
+ "modified": "2024-10-29 10:18:57.626051",
  "modified_by": "Administrator",
  "module": "Rent a Car",
  "name": "Ride Boking",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

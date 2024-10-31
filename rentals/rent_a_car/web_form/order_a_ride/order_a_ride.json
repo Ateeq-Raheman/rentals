@@ -19,7 +19,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2024-10-14 16:17:22.502715",
+ "modified": "2024-10-29 10:40:56.602869",
  "modified_by": "Administrator",
  "module": "Rent a Car",
  "name": "order-a-ride",
@@ -109,6 +109,46 @@
    "precision": "",
    "read_only": 0,
    "reqd": 1,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "items_section",
+   "fieldtype": "Section Break",
+   "hidden": 0,
+   "label": "items",
+   "max_length": 0,
+   "max_value": 0,
+   "precision": "",
+   "read_only": 0,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "hidden": 0,
+   "label": "Items",
+   "max_length": 0,
+   "max_value": 0,
+   "options": "Ride Booking Item",
+   "precision": "",
+   "read_only": 0,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "booking_time",
+   "fieldtype": "Datetime",
+   "hidden": 0,
+   "label": "Booking Time",
+   "max_length": 0,
+   "max_value": 0,
+   "precision": "",
+   "read_only": 1,
+   "reqd": 0,
    "show_in_filter": 0
   }
  ]

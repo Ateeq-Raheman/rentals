@@ -21,8 +21,7 @@
   "route",
   "status",
   "image",
-  "condition",
-  "my_python_code"
+  "condition"
  ],
  "fields": [
   {
@@ -94,14 +93,21 @@
    "reqd": 1
   },
   {
+   "default": "vaccant",
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Active\nOut Of Service\nSold\ncrushe"
+   "options": "occupied\nvaccant",
+   "print_hide": 1,
+   "read_only": 1
   },
   {
    "fieldname": "condition",
    "fieldtype": "Rating",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "Condition"
   },
   {
@@ -113,19 +119,13 @@
    "fieldname": "summary",
    "fieldtype": "HTML",
    "label": "Summary"
-  },
-  {
-   "fieldname": "my_python_code",
-   "fieldtype": "Code",
-   "label": "My Python Code",
-   "options": "Python"
   }
  ],
  "has_web_view": 1,
  "index_web_pages_for_search": 1,
  "is_published_field": "publish",
  "links": [],
- "modified": "2024-10-17 16:57:37.184194",
+ "modified": "2024-10-25 16:29:52.536656",
  "modified_by": "Administrator",
  "module": "Rent a Car",
  "name": "Vehicle",

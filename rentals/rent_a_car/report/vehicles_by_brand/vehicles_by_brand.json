@@ -20,23 +20,25 @@
  "doctype": "Report",
  "filters": [
   {
+   "default": "",
    "fieldname": "make",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "label": "Make",
    "mandatory": 1,
-   "wildcard_filter": 1
+   "options": "Vehicle",
+   "wildcard_filter": 0
   }
  ],
  "idx": 0,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2024-10-14 19:57:40.452151",
+ "modified": "2024-10-29 14:15:16.647609",
  "modified_by": "Administrator",
  "module": "Rent a Car",
  "name": "Vehicles By Brand",
  "owner": "Administrator",
  "prepared_report": 0,
- "query": "SELECT make,count(*) \nFrom tabVehicle\nWHERE make LIKE %(make)s\nGROUP BY make;\n",
+ "query": "SELECT make,count(*) \nFrom tabVehicle\nwhere  name = %(make)s\nGROUP BY make;\n",
  "ref_doctype": "Vehicle",
  "report_name": "Vehicles By Brand",
  "report_type": "Query Report",

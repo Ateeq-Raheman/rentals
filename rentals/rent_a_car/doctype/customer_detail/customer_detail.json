@@ -1,46 +1,42 @@
 {
  "actions": [],
- "allow_rename": 1,
- "creation": "2024-10-16 13:00:19.516028",
+ "autoname": "format:{customer_name}-{##}",
+ "creation": "2024-10-29 10:55:43.717316",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "less_then_10km",
-  "between_10_to_20_km",
-  "above_20_km"
+  "customer_name",
+  "contact_no"
  ],
  "fields": [
   {
-   "fieldname": "less_then_10km",
-   "fieldtype": "Data",
-   "label": "Less then 10km"
+   "fieldname": "contact_no",
+   "fieldtype": "Phone",
+   "label": "Contact No"
   },
   {
-   "fieldname": "between_10_to_20_km",
+   "fieldname": "customer_name",
    "fieldtype": "Data",
-   "label": "Between 10 to 20 km"
-  },
-  {
-   "fieldname": "above_20_km",
-   "fieldtype": "Data",
-   "label": "Above 20 km "
+   "label": "customer name"
   }
  ],
  "index_web_pages_for_search": 1,
- "issingle": 1,
  "links": [],
- "modified": "2024-10-28 18:17:12.280788",
+ "modified": "2024-10-29 12:21:53.425083",
  "modified_by": "Administrator",
  "module": "Rent a Car",
- "name": "Rentals Settings",
+ "name": "Customer Detail",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
    "create": 1,
    "delete": 1,
    "email": 1,
+   "export": 1,
    "print": 1,
    "read": 1,
+   "report": 1,
    "role": "System Manager",
    "share": 1,
    "write": 1

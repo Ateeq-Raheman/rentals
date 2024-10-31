@@ -138,13 +138,10 @@ app_license = "mit"
 # Hook on document methods and events
 
 # doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
+#     "Ride Booking": {
+#         "on_update": "rentals.rent_a_car.doctype.ride_boking.ride_boking.validate_ride_booking",
+#     }
 # }
-
 # Scheduled Tasks
 # ---------------
 

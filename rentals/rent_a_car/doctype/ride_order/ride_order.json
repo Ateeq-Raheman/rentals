@@ -8,11 +8,15 @@
  "field_order": [
   "customer_name",
   "contact_no",
-  "pickup_time",
   "vehicle",
   "column_break_gpfp",
+  "pickup_time",
+  "booking_time",
   "status",
-  "pickup_address"
+  "pickup_address",
+  "items_section",
+  "items",
+  "amended_from"
  ],
  "fields": [
   {
@@ -50,20 +54,52 @@
    "fieldname": "vehicle",
    "fieldtype": "Link",
    "label": "Vehicle",
+   "link_filters": "[[\"Vehicle\",\"status\",\"=\",\"vaccant\"]]",
    "options": "Vehicle"
   },
   {
+   "allow_on_submit": 1,
    "default": "New",
    "fieldname": "status",
    "fieldtype": "Select",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Status",
-   "options": "New\nAccepted\nRejected"
+   "options": "New\nAccepted\nRejected\nCompleted",
+   "read_only": 1
+  },
+  {
+   "fieldname": "items_section",
+   "fieldtype": "Section Break",
+   "label": "items"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Ride Booking Item"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Ride Order",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "booking_time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Booking Time",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-12 13:02:42.248318",
+ "modified": "2024-10-29 10:17:46.765685",
  "modified_by": "Administrator",
  "module": "Rent a Car",
  "name": "Ride Order",
