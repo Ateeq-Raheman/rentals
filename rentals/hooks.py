@@ -144,6 +144,11 @@ app_license = "mit"
 # }
 # Scheduled Tasks
 # ---------------
+scheduler_events = {
+    "cron": {
+        "* * * * *": ["rentals.rent_a_car.doctype.ride_boking.ride_boking.check_and_update_ride_status"]
+    }
+}
 
 # scheduler_events = {
 # 	"all": [

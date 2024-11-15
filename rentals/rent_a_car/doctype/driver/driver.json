@@ -69,14 +69,13 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Occupied\nVaccant",
-   "read_only": 1
+   "options": "Occupied\nVaccant"
   }
  ],
  "image_field": "profile_image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-28 19:42:02.929572",
+ "modified": "2024-11-15 17:37:57.170594",
  "modified_by": "Administrator",
  "module": "Rent a Car",
  "name": "Driver",

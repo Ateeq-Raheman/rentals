@@ -95,9 +95,6 @@ function third(frm) {
                 const rent_1 = r.message.between_10_to_20_km
                 const rent_2 = r.message.above_20_km
                 update_total_amount(frm, rent, rent_1, rent_2)
-                console.log(rent)
-                console.log(rent_1)
-                console.log(rent_2)
             }
         }
     });
@@ -120,3 +117,13 @@ frappe.ui.form.on("Ride Boking", {
         }
     }
 })
+frappe.ui.form.on('Ride Boking', {
+    total_distance: function (frm) {
+        // Calculate expected time based on distance
+        let expected_minutes = frm.doc.total_distance * 5; // 10 minutes per km
+        let grace_time = 60; // 1 hour grace in minutes
+        let total_expected_time = expected_minutes + grace_time;
+        frm.set_value('expected_time', total_expected_time);
+        frm.refresh_field('expected_time');
+    }
+});
