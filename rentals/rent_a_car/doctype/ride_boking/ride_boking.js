@@ -121,9 +121,20 @@ frappe.ui.form.on('Ride Boking', {
     total_distance: function (frm) {
         // Calculate expected time based on distance
         let expected_minutes = frm.doc.total_distance * 5; // 10 minutes per km
-        let grace_time = 60; // 1 hour grace in minutes
+        let grace_time = 30; // 1 hour grace in minutes
         let total_expected_time = expected_minutes + grace_time;
         frm.set_value('expected_time', total_expected_time);
         frm.refresh_field('expected_time');
+    },
+});
+frappe.ui.form.on('Ride Boking', {
+    before_workflow_action: function (frm) {
+        let minutes = cur_frm.doc.total_distance * 5;
+        let startTime = cur_frm.doc.pickup_time;
+        let diffInMinutes = frappe.datetime.get_minute_diff(frappe.datetime.now_datetime(), startTime)
+        console.log(diffInMinutes, minutes)
+        if (frm.doc.workflow_state === "Approved" && diffInMinutes < minutes) {
+            frappe.throw("cannot set the document as completed before the ride is completed")
+        }
     }
 });
